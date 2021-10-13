@@ -1,0 +1,3 @@
+# spring-email
+
+Hexagonal architecture
