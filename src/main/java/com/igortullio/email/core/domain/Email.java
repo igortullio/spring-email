@@ -1,0 +1,55 @@
+package com.igortullio.email.core.domain;
+
+import com.igortullio.email.core.domain.enumeration.EmailStatus;
+
+import java.util.Set;
+
+public class Email extends AbstractDomain {
+
+    private String from;
+    private Set<String> to;
+    private String subject;
+    private String text;
+    private EmailStatus status;
+
+    public String getFrom() {
+        return from;
+    }
+
+    public void setFrom(String from) {
+        this.from = from;
+    }
+
+    public Set<String> getTo() {
+        return to;
+    }
+
+    public void setTo(Set<String> to) {
+        this.to = to;
+    }
+
+    public String getSubject() {
+        return subject;
+    }
+
+    public void setSubject(String subject) {
+        this.subject = subject;
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
+    }
+
+    public EmailStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(EmailStatus status) {
+        this.status = status;
+    }
+
+}
