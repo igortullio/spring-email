@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_2_0.xsd" version="2.0">
+
+    <mapped-superclass class="com.igortullio.email.core.domain.AbstractDomain">
+        <attributes>
+            <id name="id">
+                <generated-value strategy="AUTO" />
+            </id>
+            <basic name="dateCreation">
+                <column name="dateCreation" nullable="false" />
+            </basic>
+        </attributes>
+    </mapped-superclass>
+
+    <entity class="com.igortullio.email.core.domain.Email" access="FIELD">
+        <table name="email" />
+
+        <attributes>
+            <basic name="from">
+                <column name="sender" nullable="false" />
+            </basic>
+            <basic name="to">
+                <column name="recipient" nullable="false" />
+            </basic>
+            <basic name="subject">
+                <column name="subject" nullable="false" />
+            </basic>
+            <basic name="text">
+                <column name="text" column-definition="text" nullable="false" />
+            </basic>
+            <basic name="status">
+                <column name="status" length="10" nullable="false" />
+                <enumerated>STRING</enumerated>
+            </basic>
+        </attributes>
+    </entity>
+
+</entity-mappings>

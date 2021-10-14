@@ -7,7 +7,6 @@ public abstract class AbstractDomain {
 
     private UUID id;
     private OffsetDateTime dateCreation;
-    private OffsetDateTime dateUpdation;
 
     public UUID getId() {
         return id;
@@ -23,14 +22,6 @@ public abstract class AbstractDomain {
 
     public void setDateCreation(OffsetDateTime dateCreation) {
         this.dateCreation = dateCreation;
-    }
-
-    public OffsetDateTime getDateUpdation() {
-        return dateUpdation;
-    }
-
-    public void setDateUpdation(OffsetDateTime dateUpdation) {
-        this.dateUpdation = dateUpdation;
     }
 
 }

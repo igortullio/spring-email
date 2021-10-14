@@ -2,12 +2,10 @@ package com.igortullio.email.core.domain;
 
 import com.igortullio.email.core.domain.enumeration.EmailStatus;
 
-import java.util.Set;
-
 public class Email extends AbstractDomain {
 
     private String from;
-    private Set<String> to;
+    private String to;
     private String subject;
     private String text;
     private EmailStatus status;
@@ -20,11 +18,11 @@ public class Email extends AbstractDomain {
         this.from = from;
     }
 
-    public Set<String> getTo() {
+    public String getTo() {
         return to;
     }
 
-    public void setTo(Set<String> to) {
+    public void setTo(String to) {
         this.to = to;
     }
 

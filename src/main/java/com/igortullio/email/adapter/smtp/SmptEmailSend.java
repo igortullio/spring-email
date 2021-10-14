@@ -1,4 +1,4 @@
-package com.igortullio.email.adapter.persistence.smtp;
+package com.igortullio.email.adapter.smtp;
 
 import com.igortullio.email.core.domain.Email;
 import com.igortullio.email.core.port.EmailSendPort;
@@ -23,7 +23,7 @@ public class SmptEmailSend implements EmailSendPort {
     public void send(Email email) {
         SimpleMailMessage smm = new SimpleMailMessage();
         smm.setFrom(email.getFrom());
-        smm.setTo(email.getTo().toArray(new String[0]));
+        smm.setTo(email.getTo().split(","));
         smm.setSubject(email.getSubject());
         smm.setText(email.getText());
         smm.setSentDate(new Date(email.getDateCreation().toInstant().toEpochMilli()));

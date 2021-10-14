@@ -15,17 +15,17 @@ public class ModelMapperConfig {
     public ModelMapper modelMapper() {
         var modelMapper = new ModelMapper();
 
-        Converter<String, Set<String>> stringSetConverter = createStringSetConverter();
+        Converter<Set<String>, String> stringSetConverter = createStringSetConverter();
         modelMapper.addConverter(stringSetConverter);
 
         return modelMapper;
     }
 
-    private Converter<String, Set<String>> createStringSetConverter() {
+    private Converter<Set<String>, String> createStringSetConverter() {
         return new AbstractConverter<>() {
-            protected Set<String> convert(String source) {
-                String[] split = source.substring(1, source.length() - 1).split(", ");
-                return Set.of(split);
+            @Override
+            protected String convert(Set<String> set) {
+                return String.join(",", set);
             }
         };
     }
